@@ -19,15 +19,20 @@ while True:
     actuator_position = client.get_node("ns=2;i=16")
 
     #GENERATE EXTRUDER DATA
-    extruder_speed = np.random.uniform(1.0,10.0)
-    extruder_temp1 = np.random.uniform(1.0,190.0)
-    extruder_temp2 = np.random.uniform(1.0,280.0)
+    extruder_speed = round(np.random.uniform(1.0,10.0), 2)
+    extruder_temp1 = round(np.random.uniform(1.0,180.0), 2)
+    extruder_temp2 = round(np.random.uniform(1.0,160.0), 2)
+
+    #GENERATE TIME LINE DATA
+    acutator_pos1 = np.random.randint(0,5)
+    acutator_pos2 = np.random.randint(0,5)
+    acutator_pos3 = np.random.randint(0,5)
 
     #GENERATE DATA TO SEND
     extruder_data = [extruder_speed, extruder_temp1, extruder_temp2]
     piston_released = choice([True, False])
-    actual_pump_pressure = np.random.randint(20,1000)
-    actuator_pos = np.random.randint(0,20000)
+    actual_pump_pressure = np.random.randint(20,100)
+    actuator_pos = [acutator_pos1, acutator_pos2, acutator_pos3]
 
     #SENDING DATA TO SERVER
     ekstruder_array.set_value(extruder_data)
