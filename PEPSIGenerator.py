@@ -1,5 +1,5 @@
 #BIBLIOTEKI
-from PEPSIGenerator import Client
+from opcua import Client
 import time
 import numpy as np
 from random import choice
