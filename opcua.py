@@ -23,7 +23,7 @@ while True:
     extruder_temp1 = round(np.random.uniform(1.0,180.0), 2)
     extruder_temp2 = round(np.random.uniform(1.0,160.0), 2)
 
-    #GENERATE TIME LINE DATA
+    #GENERATE TIMELINE DATA
     acutator_pos1 = np.random.randint(0,5)
     acutator_pos2 = np.random.randint(0,5)
     acutator_pos3 = np.random.randint(0,5)
@@ -33,6 +33,14 @@ while True:
     piston_released = choice([True, False])
     actual_pump_pressure = np.random.randint(20,100)
     actuator_pos = [acutator_pos1, acutator_pos2, acutator_pos3]
+
+    #PRINTING IN CONSOLE
+    print("-------------")
+    print(extruder_data)
+    print(piston_released)
+    print(actual_pump_pressure)
+    print(actuator_pos)
+    print("-------------")
 
     #SENDING DATA TO SERVER
     ekstruder_array.set_value(extruder_data)
