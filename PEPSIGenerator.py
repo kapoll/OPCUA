@@ -1,14 +1,14 @@
-#BIBLIOTEKI
+#LIBRARIES
 from opcua import Client
 import time
 import numpy as np
 from random import choice
 
 #PODŁĄCZENIE DO SERWERA
-url = "opc.tcp://127.0.0.1:1888"               #PODAĆ ODPOWIEDNIE IP SERWERA
+url = "opc.tcp://127.0.0.1:1888"                    #SERVER IP
 
 client= Client(url)                                 
-client.connect()                                    #ŁĄCZENIE Z SERWEREM
+client.connect()                                    #CONNECTING TO SERVER
 print("Client Connected")
 
 while True:
